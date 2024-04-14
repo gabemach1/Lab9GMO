@@ -30,7 +30,7 @@ def decode(x):
     x = str(x)
     y = ""
     for num in x:
-        y += (str(int(num)-3+10 % 10))
+        y += (str((int(num)-3+10) % 10))
     return y
 
 def main():
