@@ -26,6 +26,12 @@ def encode(x):
 
     return y
 
+def decode(x):
+    x = str(x)
+    y = ""
+    for num in x:
+        y += (str(int(num)-3 % 10))
+    return y
 
 def main():
 
@@ -34,15 +40,16 @@ def main():
         print("-------------")
         print("1. Encode")
         print("2. Decode")
-        print("3. Quit")
+        print("3. Quit\n")
         option = input("Please enter an option: ")
 
         if option == "1":
             original = str(input("Please enter your password to encode: "))
             passwordEnc = encode(original)
-            print("Your password has been encoded and stored!")
+            print("Your password has been encoded and stored!\n")
         if option == "2":
-            print("The encoded password is", passwordEnc, "and the original password is", original)
+            passwordDec = decode(passwordEnc)
+            print("The encoded password is", passwordEnc, "and the original password is", passwordDec, "\n")
         if option == "3":
             break
 
